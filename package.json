@@ -1,0 +1,17 @@
+{
+  "description": "Example of memfs usage with webpack",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "memfs": "^2.0.5"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.1",
+    "babel-core": "^6.25.0",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^3.5.3",
+    "webpack-dev-server": "^2.7.1"
+  }
+}
