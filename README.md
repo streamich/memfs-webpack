@@ -2,33 +2,15 @@
 
 Example of how to use [`memfs`][memfs] with [`webpack`][webpack].
 
-To get started:
+Basically you need to add an alias like this:
 
 ```js
-git clone https://github.com/streamich/memfs-webpack
-cd memfs-webpack
-npm install
-npm run start
+        alias: {
+            'fs': 'memfs',
+        }
 ```
 
-Now open your browser and go to [http://localhost:8080/index.html](http://localhost:8080/index.html).
-Open dev console and you should see:
-
-    index.js:4 Hello world!
-    index.js:5 Object {/text.txt: "Hello world!"}
-
-It is output from `memfs`, although in the code we used the actual `fs` module:
-
-```js
-import {vol, writeFileSync, readFileSync} from 'fs';
-
-writeFileSync('/text.txt', 'Hello world!');
-console.log(readFileSync('/text.txt', 'utf8'));
-console.log(vol.toJSON());
-```
-
-
-## `webpack.config.js`
+to your `webpack.config.js`:
 
 ```js
 module.exports = {
@@ -55,6 +37,31 @@ module.exports = {
         ]
     },
 };
+```
+
+### Getting started with this example
+
+```js
+git clone https://github.com/streamich/memfs-webpack
+cd memfs-webpack
+npm install
+npm run start
+```
+
+Now open your browser and go to [http://localhost:8080/index.html](http://localhost:8080/index.html).
+Open dev console and you should see:
+
+    index.js:4 Hello world!
+    index.js:5 Object {/text.txt: "Hello world!"}
+
+It is output from `memfs`, although in the code we used the actual `fs` module:
+
+```js
+import {vol, writeFileSync, readFileSync} from 'fs';
+
+writeFileSync('/text.txt', 'Hello world!');
+console.log(readFileSync('/text.txt', 'utf8'));
+console.log(vol.toJSON());
 ```
 
 
