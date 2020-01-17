@@ -39,6 +39,16 @@ module.exports = {
 };
 ```
 
+If your project use typescript, re-export memfs to fs.
+here is example
+```typescript
+// {{ sourceRoot }}/types/memfs.d.ts
+
+declare module 'fs' {
+  export * from 'memfs';
+}
+```
+
 ### Getting started with this example
 
 ```js
